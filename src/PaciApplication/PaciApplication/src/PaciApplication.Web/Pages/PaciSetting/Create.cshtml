@@ -1,0 +1,75 @@
+﻿@page "/createPaciSettings"
+@model PaciApplication.Web.Pages.PaciSetting.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create</h1>
+
+<h4>PaciSetting</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.SettingName" class="control-label"></label>
+                <input asp-for="PaciSetting.SettingName" class="form-control" />
+                <span asp-validation-for="PaciSetting.SettingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.SettingValue" class="control-label"></label>
+                <input asp-for="PaciSetting.SettingValue" class="form-control" />
+                <span asp-validation-for="PaciSetting.SettingValue" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PaciSetting.IsDisabled" /> @Html.DisplayNameFor(model => model.PaciSetting.IsDisabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.CreatedBy" class="control-label"></label>
+                <input asp-for="PaciSetting.CreatedBy" class="form-control" />
+                <span asp-validation-for="PaciSetting.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.CreatedDate" class="control-label"></label>
+                <input asp-for="PaciSetting.CreatedDate" class="form-control" />
+                <span asp-validation-for="PaciSetting.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.ModifiedBy" class="control-label"></label>
+                <input asp-for="PaciSetting.ModifiedBy" class="form-control" />
+                <span asp-validation-for="PaciSetting.ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.ModifiedDate" class="control-label"></label>
+                <input asp-for="PaciSetting.ModifiedDate" class="form-control" />
+                <span asp-validation-for="PaciSetting.ModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.FlexColumn1" class="control-label"></label>
+                <input asp-for="PaciSetting.FlexColumn1" class="form-control" />
+                <span asp-validation-for="PaciSetting.FlexColumn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciSetting.FlexColumn2" class="control-label"></label>
+                <input asp-for="PaciSetting.FlexColumn2" class="form-control" />
+                <span asp-validation-for="PaciSetting.FlexColumn2" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,16 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using PaciApplication.Localization
+@using Volo.Abp.Users
+@model PaciApplication.Web.Pages.IndexModel
+@inject IHtmlLocalizer<PaciApplicationResource> L
+@inject ICurrentUser CurrentUser
+@section styles {
+    <abp-style src="/Pages/Index.css" />
+}
+@section scripts {
+    <abp-script src="/Pages/Index.js" />
+}
+<center>
+    <h1>Paci APplication</h1>
+</center>

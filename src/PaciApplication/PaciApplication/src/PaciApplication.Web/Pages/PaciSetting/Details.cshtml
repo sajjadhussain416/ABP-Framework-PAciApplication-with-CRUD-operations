@@ -1,0 +1,73 @@
+﻿@page
+@model PaciApplication.Web.Pages.PaciSetting.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PaciSetting</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.SettingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.SettingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.SettingValue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.SettingValue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.IsDisabled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.IsDisabled)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.CreatedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.CreatedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.CreatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.ModifiedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.ModifiedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.ModifiedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.ModifiedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.FlexColumn1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.FlexColumn1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaciSetting.FlexColumn2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaciSetting.FlexColumn2)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PaciSetting?.PaciSettingId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,84 @@
+﻿@page "/CreatePaciApplication"
+@model PaciApplication.Web.Pages.PaciApplications.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create PaciApplication</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.ApplicationGuidId" class="control-label"></label>
+                <input asp-for="PaciAplication.ApplicationGuidId" class="form-control" />
+               
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PaciAplication.ApplicationName" class="control-label"></label>
+                <input asp-for="PaciAplication.ApplicationName" class="form-control" />
+                <span asp-validation-for="PaciAplication.ApplicationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.ApplicationDescriptionAr" class="control-label"></label>
+                <input asp-for="PaciAplication.ApplicationDescriptionAr" class="form-control" />
+                <span asp-validation-for="PaciAplication.ApplicationDescriptionAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.ApplicationDescriptionEn" class="control-label"></label>
+                <input asp-for="PaciAplication.ApplicationDescriptionEn" class="form-control" />
+                <span asp-validation-for="PaciAplication.ApplicationDescriptionEn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.ReasonAr" class="control-label"></label>
+                <input asp-for="PaciAplication.ReasonAr" class="form-control" />
+                <span asp-validation-for="PaciAplication.ReasonAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.ReasonEn" class="control-label"></label>
+                <input asp-for="PaciAplication.ReasonEn" class="form-control" />
+                <span asp-validation-for="PaciAplication.ReasonEn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.Challange" class="control-label"></label>
+                <input asp-for="PaciAplication.Challange" class="form-control" />
+                <span asp-validation-for="PaciAplication.Challange" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PaciAplication.IsEnabled" /> @Html.DisplayNameFor(model => model.PaciAplication.IsEnabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.CreatedBy" class="control-label"></label>
+                <input asp-for="PaciAplication.CreatedBy" class="form-control" />
+                <span asp-validation-for="PaciAplication.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaciAplication.CreatedDate" class="control-label"></label>
+                <input asp-for="PaciAplication.CreatedDate" class="form-control" />
+                <span asp-validation-for="PaciAplication.CreatedDate" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

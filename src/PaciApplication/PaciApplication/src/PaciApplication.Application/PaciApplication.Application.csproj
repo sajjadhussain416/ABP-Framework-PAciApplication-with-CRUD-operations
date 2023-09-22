@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>PaciApplication</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PaciApplicationRepo\**" />
+    <EmbeddedResource Remove="PaciApplicationRepo\**" />
+    <None Remove="PaciApplicationRepo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaciApplication.Domain\PaciApplication.Domain.csproj" />
+    <ProjectReference Include="..\PaciApplication.Application.Contracts\PaciApplication.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="7.3.2" />
+  </ItemGroup>
+
+</Project>

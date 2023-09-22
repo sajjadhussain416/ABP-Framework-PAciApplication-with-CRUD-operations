@@ -1,0 +1,65 @@
+﻿@page "/ShowPaciApplication"
+@model PaciApplication.Web.Pages.PaciApplications.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    th {
+        font-weight: bold;
+        background-color: #f8f9fa;
+    }
+
+    .btn-action {
+        margin-right: 5px;
+    }
+</style>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>APPLICATION GUID ID</th>
+            <th>APPLICATION NAME</th>
+            <th>DESCRIPTION (ARABIC)</th>
+            <th>DESCRIPTION (ENGLISH)</th>
+            <th>REASON (ARABIC)</th>
+            <th>REASON (ENGLISH)</th>
+            <th>CHALLANGE</th>
+            <th>IS ENABLED</th>
+            <th>CREATED BY</th>
+            <th>CREATED DATE</th>
+            <th>ACTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PaciAplication)
+        {
+            <tr>
+                <td>@item.ApplicationGuidId</td>
+                <td>@item.ApplicationName</td>
+                <td>@item.ApplicationDescriptionAr</td>
+                <td>@item.ApplicationDescriptionEn</td>
+                <td>@item.ReasonAr</td>
+                <td>@item.ReasonEn</td>
+                <td>@item.Challange</td>
+                <td>@item.IsEnabled</td>
+                <td>@item.CreatedBy</td>
+                <td>@item.CreatedDate</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-page="./Edit" asp-route-id="@item.PaciApplicationId" class="btn btn-info btn-action">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.PaciApplicationId" class="btn btn-primary btn-action">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.PaciApplicationId" class="btn btn-danger btn-action">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,70 @@
+﻿@page "/PaciSetting"
+@model PaciApplication.Web.Pages.PaciSetting.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].SettingName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].SettingValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].IsDisabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].FlexColumn1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaciSetting[0].FlexColumn2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PaciSetting)
+        {
+            <tr>
+                <td>@item.SettingName</td>
+                <td>@item.SettingValue</td>
+                <td>@item.IsDisabled</td>
+                <td>@item.CreatedBy</td>
+                <td>@item.CreatedDate</td>
+                <td>@item.ModifiedBy</td>
+                <td>@item.ModifiedDate</td>
+                <td>@item.FlexColumn1</td>
+                <td>@item.FlexColumn2</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-page="./Edit" asp-route-id="@item.PaciSettingId" class="btn btn-info">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.PaciSettingId" class="btn btn-primary">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.PaciSettingId" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
